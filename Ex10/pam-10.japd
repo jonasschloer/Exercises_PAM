@@ -1,0 +1,13 @@
+!
+!----- table of variables ---------------------------------------------------
+!
+variables = (x, px, y, py, z, δ);
+!
+orders, trunc_order = 3, exp_order = 4, order = 9;
+!
+!----- table of Hamiltonians ------------------------------------------------
+!
+!hamiltonian, type = drift, args = (), expr = δ/β0 - sqrt((1/β0+δ)^2 - px^2 - py^2 - 1/(β0*γ0)^2);
+hamiltonian, type = quadrupole, args = (k1), expr = δ/β0 - sqrt((1/β0+δ)^2 - px^2 - py^2 - 1/(β0*γ0)^2) + (k1/2)*(x^2 - y^2);
+hamiltonian, type = drift, args = (kx, ky, K, x_env, y_env), expr = δ/β0 - sqrt((1/β0+δ)^2 - px^2 - py^2 - 1/(β0*γ0)^2) + (K*(x^2 + y^2)/4(x_env^2 + y_env^2));
+!
