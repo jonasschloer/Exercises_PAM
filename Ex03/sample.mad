@@ -1,0 +1,19 @@
+!
+!----- table of elements ----------------------------------------------------
+!
+d    :drift, l = 1.0;
+dpp	 :sbend, l = 0.2, k1 = 0.3, angle=0.1, e1=0., e2=0.;
+!
+!
+!----- table of segments ----------------------------------------------------
+!
+el   : line = (d,dpp);
+total : line = (50*el);
+!
+use, sequence = total;
+!
+!
+!----- beam data ------------------------------------------------------------
+!
+beam, particle = electron, energy = 999.489e6;
+!

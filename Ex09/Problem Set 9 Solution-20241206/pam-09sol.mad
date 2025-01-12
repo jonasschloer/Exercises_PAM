@@ -1,0 +1,23 @@
+!
+!----- table of elements ----------------------------------------------------
+!
+d    : drift, l = 0.6;
+!
+qdf  : quadrupole, l = 1e-6, k1 = 353553.39059327374;
+qddf : quadrupole, l = 1e-6, k1 = -707106.7811865475;
+!
+!
+!----- table of segments ----------------------------------------------------
+!
+foc   : line = (qdf, d);
+defoc : line = (qddf, d);
+fodo  : line = (foc, defoc ,qdf);
+total : line = (fodo);
+!
+use, sequence = total;
+!
+!
+!----- beam data ------------------------------------------------------------
+!
+beam, particle = proton, energy = 100e6;
+!

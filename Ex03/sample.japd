@@ -1,0 +1,12 @@
+!
+!----- table of variables ---------------------------------------------------
+!
+variables = (x, px, y, py, z, δ);
+!
+orders, trunc_order = 3, exp_order = 4, order = 9;
+!
+!----- table of Hamiltonians ------------------------------------------------
+!
+hamiltonian, type = drift, args = (), expr = δ/β0 - sqrt((1/β0+δ)^2 - px^2 - py^2 - 1/(β0*γ0)^2);
+hamiltonian, type = sbend, args = (k1,angle,e1,e2), expr = δ/β0 - (1+ angle/l * x) * sqrt((1/β0+δ)^2 - px^2 - py^2 - 1/(β0*γ0)^2) + (1 + 0.1 *x) * k0 *(x - (0.1 * x^2)/(2 + 2* 0.1 *x));
+!

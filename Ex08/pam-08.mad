@@ -1,0 +1,24 @@
+!
+!----- table of elements ----------------------------------------------------
+!
+d    : drift, l = 10.0;
+q    : quadrupole, l = 0.01, k1 = 0.8;
+!
+!
+!
+!----- table of segments ----------------------------------------------------
+!
+dri : line = (d);
+quad : line = (q);
+block : line = (q, d);
+
+total : line = (50 * block); 
+! total : line = (d, q, d);
+!
+use, sequence = total;
+!
+!
+!----- beam data ------------------------------------------------------------
+!
+beam, particle = electron, energy = 999.489e6;
+!
