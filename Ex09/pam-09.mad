@@ -1,18 +1,17 @@
 !
 !----- table of elements ----------------------------------------------------
 !
-d    : drift, l = 1.0;
+d    : drift, l = 0.6;
 !
-qdf  : quadrupole, l = 0.2, k1 = 1.;
-qdd  : quadrupole, l = 0.2, k1 = -1.;
+qdf  : quadrupole, l = 1e-6, k1 = 3.5e5;   ! only half the strength 
+qdd  : quadrupole, l = 1e-6, k1 = -7e5;
 !
 !
 !----- table of segments ----------------------------------------------------
 !
-dri : line = (d);
 fo: line = (qdf, d);
 do: line = (qdd, d);
-fodo: line = (fo, do);
+fodo: line = (fo, do, qdf);
 !
 total: line = (fodo);
 !

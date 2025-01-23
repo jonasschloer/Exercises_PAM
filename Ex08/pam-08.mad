@@ -12,7 +12,7 @@ dri : line = (d);
 quad : line = (q);
 block : line = (q, d);
 
-total : line = (50 * block); 
+total : line = (block); 
 ! total : line = (d, q, d);
 !
 use, sequence = total;
